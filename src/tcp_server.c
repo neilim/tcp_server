@@ -134,6 +134,7 @@ int tcp_server(server_t*server){
 #endif
 					server->buffer[server->valread]='\0';
 					server->tcp_answerer(&server->clients[i],server->buffer,strlen(server->buffer));
+					bzero(server->buffer,server->buffer_size);
 				}
 			}
 		}
